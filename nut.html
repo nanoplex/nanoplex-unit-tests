@@ -1,0 +1,16 @@
+﻿<script>
+    _result = null;
+    $assert = function(t) {
+        if (_result !== undefined) {
+            _result = t;
+
+            if (!_result)
+                _result = undefined;
+        }
+    };
+</script>
+<script src="Manager.js"></script>
+<script src="Test.js"></script>
+<script src="View.js"></script>
+
+<link href="styles.css" rel="stylesheet" />
