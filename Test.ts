@@ -10,13 +10,18 @@
         this._view = new View(name);
     }
 
-    run(): Test {
-        var startTime = performance.now();
+    run() {
+        return new Promise((resolve, reject) => {
+            var startTime = performance.now();
 
-        this._promise
-            .then(() => this._view.setResult(true, performance.now() - startTime))
-            .catch(() => this._view.setResult(false, performance.now() - startTime));
-        
-        return this;
+            this._promise.then(() => {
+                this._view.setResult(true, performance.now() - startTime);
+                resolve();
+            }).catch(() => {
+                this._view.setResult(false, performance.now() - startTime);
+                reject();
+            });
+        });
+
     }
 }

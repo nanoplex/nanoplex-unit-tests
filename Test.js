@@ -6,9 +6,16 @@ var Test = (function () {
     }
     Test.prototype.run = function () {
         var _this = this;
-        var startTime = performance.now();
-        this._promise.then(function () { return _this._view.setResult(true, performance.now() - startTime); }).catch(function () { return _this._view.setResult(false, performance.now() - startTime); });
-        return this;
+        return new Promise(function (resolve, reject) {
+            var startTime = performance.now();
+            _this._promise.then(function () {
+                _this._view.setResult(true, performance.now() - startTime);
+                resolve();
+            }).catch(function () {
+                _this._view.setResult(false, performance.now() - startTime);
+                reject();
+            });
+        });
     };
     return Test;
 })();

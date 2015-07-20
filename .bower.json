@@ -1,0 +1,13 @@
+{
+  "name": "nanoplex-unit-tests",
+  "homepage": "https://github.com/r0flbear/nanoplex-unit-tests",
+  "_release": "ad72b66339",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "ad72b66339062654e8bde9494422d696f7d40e89"
+  },
+  "_source": "git://github.com/r0flbear/nanoplex-unit-tests.git",
+  "_target": "*",
+  "_originalSource": "r0flbear/nanoplex-unit-tests"
+}

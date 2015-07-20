@@ -2,7 +2,7 @@ var View = (function () {
     function View(name) {
         var el = document.createElement("div");
         el.className = "test layout horizontal center justified";
-        el.innerHTML = "<p class='name'>" + name + "</p><section class='layout vertical center'><img alt='status'/><p class='time'></p></section>";
+        el.innerHTML = "<p class='name'>" + name + "</p><section style='min-width:44px' class='layout vertical center'><img src='http://www.ramtrucks.com/shared/htmlcolorizer/images/colorizer/spinner_animation02.gif' alt='status' width='20'/><p class='time'></p></section>";
         el.setAttribute("untested", "");
         document.body.appendChild(el);
         this._element = el;
