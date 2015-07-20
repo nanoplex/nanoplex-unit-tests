@@ -1,28 +1,23 @@
-﻿declare var _result;
+﻿declare var _result: boolean;
 
 class Test {
 
     name: string;
-    private _func: Function;
+    private _promise: any;
     private _view: View;
 
-    constructor(name: string, testFunc: Function) {
+    constructor(name: string, promise: any) {
         this.name = name;
-        this._func = testFunc;
+        this._promise = promise;
         this._view = new View(name);
     }
 
     run(): Test {
-        var startTime = performance.now(),
-            endTime: number;
+        var startTime = performance.now();
 
-        this._func();
-
-        endTime = performance.now();
-
-        this._view.setResult(endTime - startTime);
-
-        _result = null;
+        this._promise
+            .then(() => this._view.setResult(true, performance.now() - startTime))
+            .catch(() => this._view.setResult(false, performance.now() - startTime));
 
         return this;
     }

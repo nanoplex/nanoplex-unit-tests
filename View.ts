@@ -14,7 +14,7 @@
         this._element = el;
     }
 
-    setResult(time: number) {
+    setResult(result:boolean, time: number) {
         var el = this._element,
             img = <HTMLScriptElement>el.querySelector("img"),
             t = <HTMLScriptElement>el.querySelector("p.time");
@@ -23,7 +23,7 @@
         el.removeAttribute("failed");
         el.removeAttribute("passed");
 
-        img.src = (_result) ? "/nut/check.svg" : "/nut/close.svg";
+        img.src = (result) ? "/bower_components/nut/check.svg" : "/bower_components/nut/close.svg";
 
         t.innerHTML = time.toFixed(3) + " ms";
     }
