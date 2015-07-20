@@ -14,7 +14,7 @@
         this._element = el;
     }
 
-    setResult(result:boolean, time: number) {
+    setResult(result: boolean, time: number) {
         var el = this._element,
             img = <HTMLScriptElement>el.querySelector("img"),
             t = <HTMLScriptElement>el.querySelector("p.time");
@@ -23,7 +23,9 @@
         el.removeAttribute("failed");
         el.removeAttribute("passed");
 
-        img.src = (result) ? "/bower_components/nut/check.svg" : "/bower_components/nut/close.svg";
+        img.src = (result)
+            ? "/bower_components/nanoplex-unit-tests/check.svg"
+            : "/bower_components/nanoplex-unit-tests/close.svg";
 
         t.innerHTML = time.toFixed(3) + " ms";
     }

@@ -1,6 +1,4 @@
-﻿declare var _result: boolean;
-
-class Test {
+﻿class Test {
 
     name: string;
     private _promise: any;
@@ -18,7 +16,7 @@ class Test {
         this._promise
             .then(() => this._view.setResult(true, performance.now() - startTime))
             .catch(() => this._view.setResult(false, performance.now() - startTime));
-
+        
         return this;
     }
 }
