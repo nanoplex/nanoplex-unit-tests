@@ -1,14 +1,11 @@
-﻿<script>
-    _result = null;
-    $assert = function(t) {
-        if (_result !== undefined) {
-            _result = t;
+﻿<link href="https://rawgit.com/Polymer/layout/master/layout.html" rel="import"/>
 
-            if (!_result)
-                _result = undefined;
-        }
-    };
-</script>
+<style>
+    body {
+        margin: 40px 20px;
+        font-family: Helvetica; 
+    }
+</style>
 <script src="Manager.js"></script>
 <script src="Test.js"></script>
 <script src="View.js"></script>
